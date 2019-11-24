@@ -35,7 +35,7 @@ root_castles: []
 ```YAML
 root_castles:
   - tboerger/homeshick-base
-  - name: tboerger/homeshick-linux
+  - name: tboerger/homeshick-osx
     force: True
 ```
 
