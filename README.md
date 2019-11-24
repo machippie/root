@@ -46,7 +46,7 @@ Force castle updates
 #### Default value
 
 ```YAML
-root_castles_force: false
+root_castles_force: true
 ```
 
 ### root_password
