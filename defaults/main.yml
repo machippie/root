@@ -10,7 +10,7 @@ root_shell: /bin/bash
 # @var root_castles:example: >
 # root_castles:
 #   - tboerger/homeshick-base
-#   - name: tboerger/homeshick-linux
+#   - name: tboerger/homeshick-osx
 #     force: True
 # @end
 root_castles: []
