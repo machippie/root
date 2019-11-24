@@ -16,7 +16,7 @@ root_shell: /bin/bash
 root_castles: []
 
 # @var root_castles_force:description: Force castle updates
-root_castles_force: False
+root_castles_force: True
 
 # @var root_sshkeys:description: List of authorized keys
 # @var root_sshkeys:example: >
