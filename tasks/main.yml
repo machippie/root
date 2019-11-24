@@ -1,0 +1,60 @@
+# Standards: 0.1
+---
+- name: Update root password
+  when: root_password | default(False)
+  user:
+    name: root
+    password: "{{ root_password }}"
+    update_password: always
+  tags:
+    - root
+
+- name: Enforce root shell
+  when: root_shell | default(False)
+  user:
+    name: root
+    shell: "{{ root_shell }}"
+  tags:
+    - root
+
+- name: Clone homeshick base
+  git:
+    repo: https://github.com/andsens/homeshick.git
+    dest: /var/root/.homesick/repos/homeshick
+  tags:
+    - root
+
+- name: Clone homeshick castles
+  loop: "{{ root_castles }}"
+  loop_control:
+    label: "{{ item.name | default(item) }}"
+  when: root_castles | default(False)
+  git:
+    repo: "https://github.com/{{ item.name | default(item) }}.git"
+    dest: "/var/root/.homesick/repos/{{ (item.name | default(item)) | basename }}"
+    force: "{{ item.force | default(root_castles_force) }}"
+  tags:
+    - root
+
+- name: Link homeshick castles
+  loop: "{{ root_castles }}"
+  loop_control:
+    label: "{{ item.name | default(item) }}"
+  when: root_castles | default(False)
+  command: "/var/root/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}"
+  changed_when: False
+  tags:
+    - root
+
+- name: Write authorized keys
+  when: root_sshkeys | default(False)
+  authorized_key:
+    user: root
+    key: "{{ root_sshkeys | join('\n') }}"
+    path: /var/root/.ssh/authorized_keys
+    exclusive: True
+    state: present
+  tags:
+    - root
+
+...
