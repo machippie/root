@@ -7,13 +7,13 @@ List of castles to use
 
 #### Default value
 
-```YAML
+```yaml
 root_castles: []
 ```
 
 #### Example usage
 
-```YAML
+```yaml
 root_castles:
   - tboerger/homeshick-base
   - name: tboerger/homeshick-osx
@@ -26,7 +26,7 @@ Force castle updates
 
 #### Default value
 
-```YAML
+```yaml
 root_castles_force: true
 ```
 
@@ -36,7 +36,7 @@ Update root password to this value
 
 #### Default value
 
-```YAML
+```yaml
 root_password:
 ```
 
@@ -46,7 +46,7 @@ Enforce this shell for root
 
 #### Default value
 
-```YAML
+```yaml
 root_shell: /bin/bash
 ```
 
@@ -56,13 +56,13 @@ List of authorized keys
 
 #### Default value
 
-```YAML
+```yaml
 root_sshkeys: []
 ```
 
 #### Example usage
 
-```YAML
+```yaml
 root_sshkeys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINaQYR0/Oj6k1H03kshz2J7rlGCaDSuaGPhhOs9FcZfn tboerger@host1
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC7oOi3qaDtfQVFhPKyd0Wk0C/y+QM71vtln8Rl44NlB tboerger@host2
