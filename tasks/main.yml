@@ -17,6 +17,22 @@
   tags:
     - root
 
+- name: Install ohmyzsh repo
+  when: root_ohmyzsh | default(False)
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: /var/root/.oh-my-zsh
+  tags:
+    - root
+
+- name: Install bashit repo
+  when: root_bashit | default(False)
+  git:
+    repo: https://github.com/Bash-it/bash-it.git
+    dest: /var/root/.bash_it
+  tags:
+    - root
+
 - name: Clone homeshick base
   git:
     repo: https://github.com/andsens/homeshick.git
