@@ -1,6 +1,16 @@
 
 ## Default Variables
 
+### root_bashit
+
+Install bash-it repo
+
+#### Default value
+
+```yaml
+root_bashit: false
+```
+
 ### root_castles
 
 List of castles to use
@@ -28,6 +38,16 @@ Force castle updates
 
 ```yaml
 root_castles_force: true
+```
+
+### root_ohmyzsh
+
+Install oh-my-zsh repo
+
+#### Default value
+
+```yaml
+root_ohmyzsh: false
 ```
 
 ### root_password
